@@ -20,7 +20,7 @@ int main(void){
     elementos do ponteiro "ptr" no arquivo "stream" */
     fwrite(texto, sizeof(char), strlen(texto), arquivo);
   }
-  // Fecha arquivo após quando não é mais necessário e o buffer é esvaziado
+  // Fecha arquivo quando não é mais necessário e esvazia o buffer
   fclose(arquivo);
 
   return 0;
