@@ -1,2 +1,2 @@
-# c_language_study_ref
+# Programming Materials for Study
 References and examples for programming study
