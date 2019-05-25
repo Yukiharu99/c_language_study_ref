@@ -41,12 +41,19 @@ int main(void){
     }
 
   // Copiar o arquivo para o buffer
-      readed_txt_size = fread(buffer, 1, txt_size, arquivo);
-      printf("readed_txt_size = %d\ntxt_size = %d\n", readed_txt_size, txt_size);
-      if (readed_txt_size != txt_size) {
-        fputs("Erro de leitura", stderr);
-        exit(3);
-      }
+    // Atribui a quantidade de elementos lidos pelo fread() à readed_txt_size
+    readed_txt_size = fread(buffer, 1, txt_size, arquivo);
+    /* size_t fread ( void * ptr, size_t size, size_t count, FILE * stream );
+    Copia o conteúdo com "count" elementos de "size" bytes cada do arquivo
+    apontado pelo ponteiro FILE "stream" para o bloco de memória "ptr" */
+    printf("readed_txt_size = %d\ntxt_size = %d\n", readed_txt_size, txt_size);
+    /* Caso a quantidade de elementos no arquivo seja diferente da quantidade
+    lida */
+    if (readed_txt_size != txt_size) {
+      // Retorna o erro e finaliza o programa com o código de erro 2;
+      fputs("Erro de leitura", stderr);
+      exit(3);
+    }
 
   // Imprime o texto
     puts(buffer);
